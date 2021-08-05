@@ -35,8 +35,8 @@ namespace IdentityServerHost.Quickstart.UI
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -264,8 +264,8 @@ namespace IdentityServerHost.Quickstart.UI
                     await _userManager.AddClaimsAsync(user, new Claim[]{
                             new Claim(JwtClaimTypes.Name, model.Username),
                             new Claim(JwtClaimTypes.Email, model.Email),
-                            new Claim(JwtClaimTypes.FamilyName, model.FirstName),
-                            new Claim(JwtClaimTypes.GivenName, model.LastName),
+                            new Claim(JwtClaimTypes.FamilyName, model.LastName),
+                            new Claim(JwtClaimTypes.GivenName, model.FirstName),
                             new Claim(JwtClaimTypes.WebSite, "http://"+model.Username+".com"),
                             new Claim(JwtClaimTypes.Role,"User") });
 

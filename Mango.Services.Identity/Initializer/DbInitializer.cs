@@ -32,7 +32,7 @@ namespace Mango.Services.Identity.Initializer
             }
             else { return; }
 
-            ApplicationUser adminUser = new ApplicationUser()
+            ApplicationUser adminUser = new()
             {
                 UserName = "admin1@gmail.com",
                 Email = "admin1@gmail.com",
@@ -52,7 +52,7 @@ namespace Mango.Services.Identity.Initializer
                 new Claim(JwtClaimTypes.Role,SD.Admin),
             }).Result;
 
-            ApplicationUser customerUser = new ApplicationUser()
+            ApplicationUser customerUser = new()
             {
                 UserName = "customer1@gmail.com",
                 Email = "customer1@gmail.com",
