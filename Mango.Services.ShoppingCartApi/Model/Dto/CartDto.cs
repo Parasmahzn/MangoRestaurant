@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace Mango.Services.ShoppingCartApi.Model.Dto
 {
-    public class ShoppingCartDto
+    public class CartDto
     {
+        public CartHeaderDto CartHeader { get; set; }
+        public IEnumerable<CartDetailsDto> CartDetails { get; set; }
+
     }
 }
