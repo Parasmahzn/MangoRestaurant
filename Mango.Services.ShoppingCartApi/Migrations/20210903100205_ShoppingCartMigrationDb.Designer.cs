@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mango.Services.ShoppingCartApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210826124238_AddProductAndCartModels")]
-    partial class AddProductAndCartModels
+    [Migration("20210903100205_ShoppingCartMigrationDb")]
+    partial class ShoppingCartMigrationDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,7 +47,7 @@ namespace Mango.Services.ShoppingCartApi.Migrations
 
             modelBuilder.Entity("Mango.Services.ShoppingCartApi.Model.CartHeader", b =>
                 {
-                    b.Property<int>("CardHeaderId")
+                    b.Property<int>("CartHeaderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -58,7 +58,7 @@ namespace Mango.Services.ShoppingCartApi.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CardHeaderId");
+                    b.HasKey("CartHeaderId");
 
                     b.ToTable("CartHeaders");
                 });

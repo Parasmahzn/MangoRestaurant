@@ -45,7 +45,7 @@ namespace Mango.Services.ShoppingCartApi.Migrations
 
             modelBuilder.Entity("Mango.Services.ShoppingCartApi.Model.CartHeader", b =>
                 {
-                    b.Property<int>("CardHeaderId")
+                    b.Property<int>("CartHeaderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -56,7 +56,7 @@ namespace Mango.Services.ShoppingCartApi.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CardHeaderId");
+                    b.HasKey("CartHeaderId");
 
                     b.ToTable("CartHeaders");
                 });

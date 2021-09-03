@@ -2,7 +2,7 @@
 
 namespace Mango.Services.ShoppingCartApi.Migrations
 {
-    public partial class AddProductAndCartModels : Migration
+    public partial class ShoppingCartMigrationDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,14 +10,14 @@ namespace Mango.Services.ShoppingCartApi.Migrations
                 name: "CartHeaders",
                 columns: table => new
                 {
-                    CardHeaderId = table.Column<int>(type: "int", nullable: false)
+                    CartHeaderId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CouponCode = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartHeaders", x => x.CardHeaderId);
+                    table.PrimaryKey("PK_CartHeaders", x => x.CartHeaderId);
                 });
 
             migrationBuilder.CreateTable(
@@ -53,7 +53,7 @@ namespace Mango.Services.ShoppingCartApi.Migrations
                         name: "FK_CartDetails_CartHeaders_CartHeaderId",
                         column: x => x.CartHeaderId,
                         principalTable: "CartHeaders",
-                        principalColumn: "CardHeaderId",
+                        principalColumn: "CartHeaderId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CartDetails_Products_ProductId",
